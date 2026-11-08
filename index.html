@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brunel Guendehou — Cadreur · Opérateur de prise de vue</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<meta name="description" content="Brunel Guendehou — cadreur, opérateur de prise de vue et opérateur gimbal au Bénin. Plateau TV, captation live, clips et courts métrages pour la SRTB, l’ORTB, A+ Bénin, Canal+ et Télésud Africa.">
+<meta property="og:title" content="Brunel Guendehou — Cadreur · Opérateur de prise de vue">
+<meta property="og:description" content="Brunel Guendehou — cadreur, opérateur de prise de vue et opérateur gimbal au Bénin. Plateau TV, captation live, clips et courts métrages pour la SRTB, l’ORTB, A+ Bénin, Canal+ et Télésud Africa.">
+<meta property="og:image" content="media/portrait.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111415'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23D92D20'/%3E%3C/svg%3E">
+<style>
+/* Direction : le « conducteur » d'une régie de télévision. Nom monumental en grotesque condensée, productions listées comme un conducteur d'émission,
+   un seul accent rouge « tally » (la lampe qui signale la caméra à l'antenne). Grille 12 colonnes, filets fins, données en mono. */
+:root{
+  --paper:#EDEFEE; --paper-2:#E2E5E4; --ink:#111415; --ink-2:#3B4143; --mute:#6E7678; --line:#C9CECD;
+  --tally:#D92D20; --tally-ink:#FFFFFF;
+  --cover-bg:#15191A; --cover-fg:#E9ECEB; --cover-line:rgba(233,236,235,.13);
+  --display:"Big Shoulders Display","Arial Narrow","Roboto Condensed",sans-serif;
+  --body:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --gutter:clamp(16px,4vw,48px); --maxw:1320px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F1213; --paper-2:#171B1C; --ink:#E9ECEB; --ink-2:#B9C0C1; --mute:#859092; --line:#2A3133;
+  --tally:#F0483B; --tally-ink:#0F1213; --cover-bg:#1B2022; --cover-fg:#E9ECEB; --cover-line:rgba(233,236,235,.12);
+  color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --paper:#0F1213; --paper-2:#171B1C; --ink:#E9ECEB; --ink-2:#B9C0C1; --mute:#859092; --line:#2A3133;
+  --tally:#F0483B; --tally-ink:#0F1213; --cover-bg:#1B2022; --cover-fg:#E9ECEB; --cover-line:rgba(233,236,235,.12);
+  color-scheme:dark;}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--tally);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--tally);vertical-align:1px}
+.dot.live{animation:blink 1.6s steps(1) infinite}
+@keyframes blink{50%{opacity:.25}}
+
+/* ── Barre de régie */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:24px;height:52px}
+.bar .mark{font:800 20px/1 var(--display);letter-spacing:.02em;text-decoration:none;text-transform:uppercase}
+.bar nav{display:flex;gap:22px;margin-left:auto}
+.bar nav a{text-decoration:none;color:var(--ink-2)}
+.bar nav a:hover{color:var(--tally)}
+.bar .tc{font-variant-numeric:tabular-nums;color:var(--mute);min-width:11ch;text-align:right}
+@media (max-width:760px){.bar nav{display:none}.bar .tc{margin-left:auto}}
+
+/* ── Ouverture */
+.hero{padding-top:clamp(28px,5vw,64px);padding-bottom:0;container-type:inline-size}
+.status{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:baseline;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.status b{font-weight:500;color:var(--ink)}
+.status .mono{color:var(--mute)}
+.name{margin:10px 0 0;font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.8;letter-spacing:-.005em}
+.name span{display:block;width:max-content;max-width:none}
+.prefix{margin:clamp(14px,2.5vw,28px) 0 0;color:var(--mute)}
+.name .l1{font-size:12.5cqi;font-weight:800}
+.name .l2{font-size:25cqi;margin-top:.04em}
+.name .l2 i{font-style:normal;color:var(--tally)}
+@media (prefers-reduced-motion:no-preference){
+  .intro .name span{animation:rise .9s cubic-bezier(.2,.7,.1,1) both}
+  .intro .name .l2{animation-delay:.12s}
+  .intro .lede,.intro .tracks{animation:fade .8s .35s both}
+}
+@keyframes rise{from{transform:translateY(.25em);clip-path:inset(-30% 0 100% 0)}to{transform:none;clip-path:inset(-30% 0 -10% 0)}}
+@keyframes fade{from{opacity:.0001;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero-foot{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:clamp(20px,3vw,36px);padding-bottom:clamp(36px,6vw,72px)}
+.lede-col{grid-column:1/span 7;display:flex;flex-direction:column;gap:22px}
+.lede{font-size:clamp(19px,2vw,24px);line-height:1.4;margin:0;text-wrap:pretty;max-width:34em}
+.lede-side{grid-column:9/span 4;display:flex;flex-direction:column;gap:14px;align-self:end}
+.portrait{aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05);width:100%;max-width:260px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid var(--ink);background:transparent;text-decoration:none;cursor:pointer;font:500 15px/1 var(--body)}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--tally);border-color:var(--tally);color:var(--tally-ink)}
+.btn.solid:hover{filter:brightness(1.08);background:var(--tally);color:var(--tally-ink)}
+.tracks{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.track{padding:14px 16px 18px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;text-decoration:none;cursor:pointer;background:none;border-top:0;border-bottom:0;border-left:0;text-align:left}
+.track:last-child{border-right:0}
+.track+.track{padding-left:16px}
+.track .mono{color:var(--mute)}
+.track strong{font:800 clamp(22px,2.4vw,30px)/1 var(--display);text-transform:uppercase}
+.track span{color:var(--ink-2);font-size:14px}
+.track:hover strong{color:var(--tally)}
+@media (max-width:860px){.hero-foot{grid-template-columns:1fr}.lede-col,.lede-side{grid-column:auto}.tracks{grid-template-columns:1fr 1fr}.track:nth-child(2){border-right:0}.track:nth-child(n+3){border-top:1px solid var(--line)}.track:nth-child(3){padding-left:0}}
+
+/* ── Sections */
+section{padding:clamp(56px,8vw,112px) 0 0}
+.shead{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:0}
+.shead .num{grid-column:1/span 2;color:var(--tally)}
+.shead h2{grid-column:3/span 7;margin:0;font:800 clamp(44px,7vw,104px)/.85 var(--display);text-transform:uppercase;text-wrap:balance}
+.shead .aside{grid-column:10/span 3;color:var(--mute);text-align:right}
+@media (max-width:760px){.shead{grid-template-columns:1fr;gap:8px}.shead>*{grid-column:auto!important;text-align:left!important}}
+
+/* ── À la une */
+.featured{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:28px}
+.feat{grid-column:span 6;text-decoration:none;display:flex;flex-direction:column;gap:12px;cursor:pointer}
+.feat.w7{grid-column:span 7}.feat.w5{grid-column:span 5}.feat.w12{grid-column:span 12}
+.feat.w12 .cover{aspect-ratio:21/8}
+.feat .cover{aspect-ratio:16/10}
+.feat h3{margin:0;font:800 30px/1 var(--display);text-transform:uppercase}
+.feat p{margin:0;color:var(--ink-2)}
+.feat .meta{display:flex;gap:16px;color:var(--mute)}
+.feat:hover h3{color:var(--tally)}
+.feat:hover .cover{transform:translateY(-3px)}
+@media (max-width:760px){.featured{grid-template-columns:1fr}.feat{grid-column:auto!important}.feat .cover{aspect-ratio:16/10!important}}
+
+/* Couverture générée */
+.cover{position:relative;overflow:hidden;background:var(--cover-bg);color:var(--cover-fg);transition:transform .35s ease}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover .pat{position:absolute;inset:0}
+.cv-live .pat{background:repeating-linear-gradient(transparent 0 3px,var(--cover-line) 3px 4px)}
+.cv-gimbal .pat{background:repeating-radial-gradient(circle at 78% 30%,transparent 0 22px,var(--cover-line) 22px 23px)}
+.cv-fiction .pat{background:linear-gradient(#000,#000) top/100% 11% no-repeat,linear-gradient(#000,#000) bottom/100% 11% no-repeat,linear-gradient(90deg,transparent calc(33.33% - 1px),var(--cover-line) 0 33.33%,transparent 0 calc(66.66% - 1px),var(--cover-line) 0 66.66%,transparent 0),linear-gradient(transparent calc(33.33% - 1px),var(--cover-line) 0 33.33%,transparent 0 calc(66.66% - 1px),var(--cover-line) 0 66.66%,transparent 0)}
+.cv-plateau .pat{background:linear-gradient(90deg,#BFBFBF 0 14.28%,#BFBF3A 0 28.57%,#3ABFBF 0 42.85%,#3ABF3A 0 57.14%,#BF3ABF 0 71.42%,#BF3A3A 0 85.71%,#3A3ABF 0) top/100% 34% no-repeat;opacity:.55}
+.cover .cv-n{position:absolute;top:14px;left:16px;font:500 11px/1 var(--mono);letter-spacing:.08em;opacity:.75}
+.cover .cv-s{position:absolute;top:12px;right:14px;font:500 11px/1 var(--mono);letter-spacing:.08em;display:flex;align-items:center;gap:7px}
+.cover .cv-t{position:absolute;left:16px;right:16px;bottom:12px;font:900 clamp(30px,5.2cqi,76px)/.85 var(--display);text-transform:uppercase;text-wrap:balance}
+.cover.has-img .cv-t,.cover.has-img .cv-n{display:none}
+.cover.has-img .cv-s{background:var(--cover-bg);padding:5px 7px}
+.cover{container-type:inline-size}
+.cover .cv-t{font-size:clamp(26px,11cqi,96px)}
+
+.cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+.cover .cv-play{position:absolute;left:16px;bottom:14px;display:flex;align-items:center;gap:8px;font:500 11px/1 var(--mono);letter-spacing:.08em;background:var(--tally);color:#fff;padding:6px 9px}
+.cover.has-img .cv-play{display:flex}
+.vidtag{display:inline-flex;align-items:center;gap:6px;margin-left:10px;font:500 10.5px/1 var(--mono);letter-spacing:.08em;color:var(--tally);vertical-align:4px}
+.player{display:flex;flex-direction:column;gap:14px}
+.player video{width:100%;max-height:78vh;background:#000;display:block}
+.frame{position:relative;aspect-ratio:16/9;background:#000}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.player figcaption{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.watch{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;background:var(--cover-bg);color:var(--cover-fg);text-decoration:none;margin-top:14px}
+.watch strong{font:800 clamp(24px,3vw,36px)/1 var(--display);text-transform:uppercase}
+.watch:hover strong{color:var(--tally)}
+.vlist{display:flex;flex-direction:column;gap:6px}
+.vitem{display:grid;grid-template-columns:96px 1fr 32px;gap:10px;align-items:center;border:1px solid var(--line);padding:6px}
+.vitem video{width:96px;height:54px;object-fit:cover;background:#000}
+.vitem span{font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vitem button{border:1px solid var(--line);background:none;cursor:pointer;height:32px}
+.busy{opacity:.6;pointer-events:none}
+/* ── Conducteur (liste des projets) */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:44px 0 14px}
+.chip{border:1px solid var(--line);background:none;padding:8px 12px;cursor:pointer;font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chip sup{font-size:9px;margin-left:4px;opacity:.7}
+.rundown{width:100%;border-collapse:collapse}
+.rundown th{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--line)}
+.rundown td{padding:16px 12px 16px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.rundown tr.row{cursor:pointer}
+.rundown tr.row:hover td{background:var(--paper-2)}
+.rundown tr.row:hover .t{color:var(--tally)}
+.rundown .n{font:500 12px/1 var(--mono);color:var(--mute);width:56px;font-variant-numeric:tabular-nums}
+.rundown .t{font:800 clamp(22px,2.6vw,32px)/1 var(--display);text-transform:uppercase;display:block}
+.rundown .tg{color:var(--ink-2);font-size:14.5px;display:block;margin-top:4px}
+.rundown .c,.rundown .y{font:500 12px/1.4 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+.rundown .st{white-space:nowrap}
+.rundown .role{font-size:14.5px;color:var(--ink-2);max-width:16em}
+.badge{display:inline-flex;align-items:center;gap:7px;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 7px;border:1px solid var(--line);color:var(--ink-2)}
+.badge.on{border-color:var(--tally);color:var(--tally)}
+@media (max-width:860px){.rundown thead{display:none}.rundown tr.row{display:grid;grid-template-columns:44px 1fr;padding:14px 0;border-bottom:1px solid var(--line)}.rundown td{border:0;padding:2px 0}.rundown .n{grid-row:span 4}.rundown .role,.rundown .c,.rundown .y,.rundown .st{grid-column:2}}
+.peek{position:fixed;z-index:30;width:300px;aspect-ratio:16/10;pointer-events:none;opacity:0;transition:opacity .15s;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.peek.show{opacity:1}
+@media (hover:none),(max-width:860px){.peek{display:none}}
+
+/* ── Parcours */
+.cols{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.tl{grid-column:span 7}
+.tl2{grid-column:9/span 4}
+.tl h3,.tl2 h3{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:28px 0 0;padding-bottom:12px}
+.item{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.item .d{font:500 12px/1.5 var(--mono);color:var(--tally);font-variant-numeric:tabular-nums}
+.item .d small{display:block;color:var(--mute);font-size:12px}
+.item h4{margin:0;font:700 18px/1.3 var(--body)}
+.item .o{font:500 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-top:5px}
+.item p{margin:8px 0 0;color:var(--ink-2);font-size:15.5px;max-width:52ch}
+@media (max-width:860px){.tl,.tl2{grid-column:1/-1}.item{grid-template-columns:96px 1fr}}
+
+/* ── Compétences */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:0}
+.sk{padding:22px 24px 26px 0;border-bottom:1px solid var(--line)}
+.sk:not(:nth-child(3n+1)){padding-left:24px;border-left:1px solid var(--line)}
+.sk h3{margin:0 0 12px;font:800 24px/1 var(--display);text-transform:uppercase}
+.sk ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 20px;color:var(--ink-2);font-size:15.5px}
+.sk li{white-space:nowrap}
+@media (max-width:860px){.skills{grid-template-columns:1fr}.sk{padding-left:0!important;border-left:0!important}}
+
+/* ── Antennes */
+.antennas{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-top:32px}
+.bc{grid-column:3/span 10;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 .5em;font:800 clamp(40px,6.4vw,96px)/.95 var(--display);text-transform:uppercase}
+.bc li:not(:last-child)::after{content:"·";color:var(--tally);margin-left:.5em}
+.antennas p{grid-column:3/span 6;margin:8px 0 0;color:var(--ink-2);font-size:17px;max-width:38em}
+.pt{grid-column:3/span 10;list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 28px}
+.pt li{font:500 13px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+@media (max-width:760px){.antennas>*{grid-column:1/-1!important}}
+
+/* ── Contact */
+.contact{margin-top:clamp(64px,9vw,128px);background:var(--ink);color:var(--paper);padding:clamp(40px,6vw,80px) 0 28px}
+.contact .big{font:900 clamp(56px,11vw,168px)/.82 var(--display);text-transform:uppercase;margin:0}
+.contact .big a{text-decoration:none}
+.contact .big a:hover{color:var(--tally)}
+.clist{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent)}
+.clist div{padding:16px 16px 16px 0}
+.clist .mono{color:color-mix(in srgb,var(--paper) 60%,transparent);display:block;margin-bottom:6px}
+.clist a{text-decoration:none;word-break:break-word}
+.clist a:hover{color:var(--tally)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:56px;color:color-mix(in srgb,var(--paper) 55%,transparent)}
+@media (max-width:760px){.clist{grid-template-columns:1fr 1fr}}
+
+/* ── Fiche projet */
+.sheet{position:fixed;inset:0;z-index:40;background:var(--paper);overflow-y:auto;display:none}
+.sheet.open{display:block}
+@media (prefers-reduced-motion:no-preference){.sheet.open{animation:fade .3s both}}
+.sheet-bar{position:sticky;top:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--line)}
+.sheet-bar .wrap{display:flex;align-items:center;gap:16px;height:52px}
+.sheet-bar .x{margin-left:auto}
+.iconbtn{border:1px solid var(--line);background:none;padding:8px 12px;cursor:pointer;font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.iconbtn:hover{border-color:var(--ink)}
+.sh-head{padding:clamp(28px,5vw,64px) 0 28px;container-type:inline-size}
+.sh-head h1{margin:10px 0 0;font:900 clamp(56px,10cqi,150px)/.84 var(--display);text-transform:uppercase;text-wrap:balance}
+.sh-head p{font-size:clamp(19px,2vw,24px);margin:18px 0 0;max-width:34em;color:var(--ink-2)}
+.sh-cover{aspect-ratio:21/9}
+.sh-body{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:36px 0 80px}
+.sh-meta{grid-column:1/span 4;display:flex;flex-direction:column}
+.sh-meta div{padding:12px 0;border-top:1px solid var(--line)}
+.sh-meta .mono{color:var(--mute);display:block;margin-bottom:4px}
+.sh-text{grid-column:6/span 7}
+.sh-text p{margin:0 0 1em;font-size:18px;max-width:40em}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--paper-2)}
+.sh-nav{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--ink);padding:18px 0 48px}
+.sh-nav button{background:none;border:0;cursor:pointer;text-align:left;padding:0}
+.sh-nav button:last-child{text-align:right}
+.sh-nav strong{display:block;font:800 26px/1 var(--display);text-transform:uppercase}
+.sh-nav button:hover strong{color:var(--tally)}
+@media (max-width:860px){.sh-meta,.sh-text{grid-column:1/-1}.sh-cover{aspect-ratio:16/10}.gallery{grid-template-columns:1fr}}
+
+/* ── Admin */
+.admin-fab{position:fixed;right:16px;bottom:16px;z-index:35;display:none}
+.admin-fab.show{display:inline-flex}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:60;background:var(--ink);color:var(--paper);padding:12px 16px;font-size:14.5px;display:none;max-width:calc(100% - 32px)}
+.toast.show{display:block}
+.adm{position:fixed;top:0;right:0;bottom:0;z-index:50;width:min(560px,100%);background:var(--paper);border-left:1px solid var(--ink);display:none;flex-direction:column;box-shadow:-24px 0 48px rgba(0,0,0,.18)}
+.adm.open{display:flex}
+.adm-h{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.adm-h strong{font:800 22px/1 var(--display);text-transform:uppercase}
+.adm-h .x{margin-left:auto}
+.adm-tabs{display:flex;border-bottom:1px solid var(--line);overflow-x:auto}
+.adm-tabs button{flex:1;background:none;border:0;border-bottom:2px solid transparent;padding:12px 10px;cursor:pointer;font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.adm-tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--tally)}
+.adm-b{flex:1;overflow-y:auto;padding:18px}
+.adm-f{border-top:1px solid var(--line);padding:12px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.adm-f .pending{font-size:14px;color:var(--mute);flex:1;min-width:160px}
+.adm-f .pending.dirty{color:var(--tally)}
+.note{font-size:14px;color:var(--ink-2);background:var(--paper-2);padding:10px 12px;margin:0 0 14px}
+.alist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.arow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.arow strong{display:block;font-weight:700;font-size:15.5px}
+.arow small{color:var(--mute);font-size:13px}
+.arow .acts{display:flex;gap:4px}
+.arow .acts button{border:1px solid var(--line);background:none;cursor:pointer;width:32px;height:32px;font-size:14px}
+.arow .acts button:hover{border-color:var(--ink)}
+.arow.hidden strong{opacity:.5}
+.form{display:flex;flex-direction:column;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.field .hint{font-size:12.5px;color:var(--mute)}
+.field input[type=text],.field input[type=url],.field input[type=email],.field textarea,.field select{font:400 15.5px/1.4 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:10px 11px;width:100%}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--ink);outline:none}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check{display:flex;align-items:center;gap:8px;font-size:15px}
+.thumbs{display:flex;flex-wrap:wrap;gap:8px}
+.thumbs figure{margin:0;position:relative;width:96px;height:72px;background:var(--paper-2)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.thumbs button{position:absolute;top:2px;right:2px;width:22px;height:22px;border:0;background:var(--ink);color:var(--paper);cursor:pointer;font-size:12px;line-height:1}
+.linkrow{display:grid;grid-template-columns:1fr 1.6fr 32px;gap:6px}
+.linkrow button{border:1px solid var(--line);background:none;cursor:pointer}
+.small{font-size:13px;padding:8px 12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+(() => {
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const safeUrl = (u) => { u = String(u || "").trim(); if (!u) return ""; if (!/^[a-z]+:/i.test(u)) u = "https://" + u; return /^https?:\/\//i.test(u) ? u : ""; };
+const host = (u) => { try { return new URL(u).host.replace(/^www\./, ""); } catch { return u; } };
+const slugify = (s) => String(s || "projet").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48) || "projet";
+const uid = () => Math.random().toString(36).slice(2, 9);
+const PREVIEW = {}; // aperçus locaux des fichiers envoyés, le temps que Cloudflare republie
+const imgSrc = (ref) => !ref ? "" : (PREVIEW[ref.src] || ref.src || "");
+const pad = (n) => String(n).padStart(2, "0");
+const STATUS = { "en-cours": "En cours", diffuse: "Diffusé", livre: "Livré" };
+const cat = (k) => ((view().tracks.find((t) => t.k === k)) || {}).label || "";
+
+let site = null;
+let draft = null;             // copie de travail de l'admin
+let filter = "all";
+let caps = { canEdit: false };
+
+/* ───────────── Rendu public ───────────── */
+function view() { return draft || site; }
+function visibleProjects(s = view()) { return s.projects.filter((p) => !p.hidden); }
+
+function parseVideo(url) {
+  const u = safeUrl(url); if (!u) return null;
+  let m;
+  if ((m = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/))) {
+    const t = (u.match(/[?&]t=(\d+)/) || [])[1];
+    return { kind: "youtube", id: m[1], url: u, embed: `https://www.youtube-nocookie.com/embed/${m[1]}?rel=0&modestbranding=1${t ? "&start=" + t : ""}`, thumb: `https://i.ytimg.com/vi/${m[1]}/hqdefault.jpg`, thumbHi: `https://i.ytimg.com/vi/${m[1]}/maxresdefault.jpg` };
+  }
+  if ((m = u.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/([\w]+))?/))) return { kind: "vimeo", id: m[1], url: u, embed: `https://player.vimeo.com/video/${m[1]}${m[2] ? "?h=" + m[2] : ""}` };
+  if ((m = u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([\w-]+)/))) return { kind: "drive", id: m[1], url: u, embed: `https://drive.google.com/file/d/${m[1]}/preview` };
+  if (/\.(mp4|webm|m4v|mov)(\?|$)/i.test(u)) return { kind: "file", url: u };
+  return { kind: "link", url: u };
+}
+const vids = (p) => (p.videos || []).map((v) => ({ ...v, info: parseVideo(v.url) })).filter((v) => v.info);
+const hasVideo = (p) => vids(p).length > 0;
+function coverHTML(p, i, opts = {}) {
+  const yt = vids(p).find((v) => v.info.thumb);
+  const src = imgSrc(p.cover) || (yt ? yt.info.thumbHi : "");
+  const fallback = !imgSrc(p.cover) && yt ? ` onload="if(this.naturalWidth<200)this.src='${yt.info.thumb}'" onerror="this.onerror=null;this.src='${yt.info.thumb}'"` : "";
+  const media = src ? `<img src="${esc(src)}" alt="" loading="lazy"${fallback}>` : "";
+  const st = p.status === "en-cours" ? `<span class="cv-s"><span class="dot live"></span>EN COURS</span>` : "";
+  const play = hasVideo(p) ? `<span class="cv-play">▶ VIDÉO</span>` : "";
+  return `<div class="cover cv-${esc(p.category)}${media ? " has-img" : ""} ${opts.cls || ""}">
+    <div class="pat"></div>${media}${media ? play : ""}
+    <span class="cv-n">N°${pad(i + 1)} — ${esc(cat(p.category) || "")}</span>${st}
+    <span class="cv-t">${esc(p.title)}</span></div>`;
+}
+
+function render() {
+  const s = view(), P = s.profile, C = P.contact || {};
+  const projects = visibleProjects(s);
+  const featured = projects.filter((p) => p.featured);
+  const counts = projects.reduce((a, p) => (a[p.category] = (a[p.category] || 0) + 1, a), {});
+  const list = filter === "all" ? projects : projects.filter((p) => p.category === filter);
+  const exp = s.experience.filter((e) => e.kind === "exp"), edu = s.experience.filter((e) => e.kind === "edu");
+  const idx = (p) => projects.indexOf(p);
+  const contacts = [
+    C.email && ["E-mail", `<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>`],
+    C.phone && ["Téléphone", `<a href="tel:${esc(C.phone.replace(/\s/g, ""))}">${esc(C.phone)}</a>`],
+    safeUrl(C.linkedin) && ["LinkedIn", `<a href="${esc(safeUrl(C.linkedin))}" target="_blank" rel="noopener">${esc(host(safeUrl(C.linkedin)))}</a>`],
+    safeUrl(C.website) && ["Bande démo", `<a href="${esc(safeUrl(C.website))}" target="_blank" rel="noopener">${esc(host(safeUrl(C.website)))}</a>`],
+    safeUrl(C.instagram) && ["Instagram", `<a href="${esc(safeUrl(C.instagram))}" target="_blank" rel="noopener">@${esc(new URL(safeUrl(C.instagram)).pathname.replace(/\//g, ""))}</a>`],
+    C.facebook && ["Facebook", esc(C.facebook)],
+    C.address && ["Adresse", esc(C.address)],
+  ].filter(Boolean);
+  const contactLink = C.email ? `mailto:${esc(C.email)}` : (safeUrl(C.instagram) || safeUrl(C.linkedin) || "#contact");
+  const since = Math.min(...s.experience.filter((e) => e.kind === "exp").map((e) => +(String(e.start).match(/\d{4}/) || [9999])[0]));
+  const date = (e) => e.start || e.end || e.current ? `${esc(e.start || "")}<small>${e.current ? "aujourd’hui" : esc(e.end || "")}</small>` : "";
+  const item = (e) => `<div class="item"><div class="d">${date(e)}</div><div><h4>${esc(e.title)}</h4>
+    <div class="o">${esc(e.org)}${e.place ? " · " + esc(e.place) : ""}</div>${e.text ? `<p>${esc(e.text)}</p>` : ""}</div></div>`;
+
+  $("#app").innerHTML = `
+  <header class="bar"><div class="wrap">
+    <a class="mark" href="#top">${esc(P.first)} ${esc(P.last)}</a>
+    <nav class="mono" aria-label="Sections"><a href="#projets">Productions</a><a href="#parcours">Parcours</a><a href="#competences">Matériel</a><a href="#antennes">Antennes</a><a href="#contact">Contact</a></nav>
+    <span class="tc mono" id="tc" title="Heure locale — ${esc(P.city || P.location)}"></span>
+  </div></header>
+  <main id="top">
+  <div class="hero wrap">
+    <div class="status">
+      <span class="mono"><span class="dot live"></span>&nbsp; ${esc(P.statusLabel)}</span>
+      <b>${esc(P.status)}</b>
+      <span class="mono" style="margin-left:auto">${esc(P.location)} · ${esc(P.origin)}</span>
+    </div>
+    ${P.prefix ? `<p class="mono prefix">${esc(P.prefix)}</p>` : ""}<h1 class="name" aria-label="${esc((P.prefix ? P.prefix + " " : "") + P.first + " " + P.last)}"><span class="l1">${esc(P.first)}</span><span class="l2">${esc(P.last).replace(/^(.*)(.)$/, "$1<i>$2</i>")}</span></h1>
+    <div class="hero-foot">
+      <div class="lede-col">
+        <p class="mono" style="margin:0;color:var(--tally)">${esc(P.roles)}</p>
+        <p class="lede">${esc(P.lede)}</p>
+        <div class="cta"><a class="btn solid" href="#projets">Voir les productions</a>
+          ${P.cv ? `<button class="btn" id="cvbtn" type="button">Télécharger le CV (PDF)</button>` : ""}
+          <a class="btn" href="${contactLink}"${contactLink.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>Me contacter</a></div>
+      </div>
+      <div class="lede-side">${P.portrait ? `<img class="portrait" src="${esc(imgSrc(P.portrait))}" alt="Portrait de ${esc(P.first + " " + P.last)}">` : ""}</div>
+    </div>
+    <div class="tracks" role="list">${s.tracks.map((t, i) => `<button class="track" role="listitem" data-cat="${esc(t.k)}" type="button">
+      <span class="mono">Piste ${pad(i + 1)} · ${counts[t.k] || 0} production${(counts[t.k] || 0) > 1 ? "s" : ""}</span><strong>${esc(t.label)}</strong><span>${esc(t.desc)}</span></button>`).join("")}</div>
+  </div>
+
+  <section id="projets"><div class="wrap">
+    <div class="shead"><span class="num mono">01 / Productions</span><h2>Sélection</h2><span class="aside mono">${projects.length} productions au conducteur</span></div>
+    ${featured.length ? `<div class="featured">${featured.map((p, i) => `<a class="feat ${featured.length % 2 && i === featured.length - 1 ? "w12" : (Math.floor(i / 2) % 2 ? (i % 2 ? "w7" : "w5") : (i % 2 ? "w5" : "w7"))}" href="#p-${esc(p.slug)}">
+      ${coverHTML(p, idx(p))}<div class="meta mono"><span>${esc(cat(p.category))}</span>${p.year ? `<span>${esc(p.year)}</span>` : ""}<span>${esc(STATUS[p.status] || "")}</span></div>
+      <h3>${esc(p.title)}</h3><p>${esc(p.tagline)}</p></a>`).join("")}</div>` : ""}
+    <div class="filters" role="group" aria-label="Filtrer par piste">
+      <button class="chip" type="button" data-f="all" aria-pressed="${filter === "all"}">Tout<sup>${projects.length}</sup></button>
+      ${s.tracks.map((t) => `<button class="chip" type="button" data-f="${esc(t.k)}" aria-pressed="${filter === t.k}">${esc(t.label)}<sup>${counts[t.k] || 0}</sup></button>`).join("")}
+    </div>
+    <table class="rundown"><thead><tr><th>N°</th><th>Production</th><th>Poste</th><th>Diffuseur · Prod.</th><th>Date</th><th>Statut</th></tr></thead><tbody>
+    ${list.map((p) => `<tr class="row" data-slug="${esc(p.slug)}" tabindex="0" aria-label="Ouvrir ${esc(p.title)}">
+      <td class="n">${pad(idx(p) + 1)}</td>
+      <td><span class="t">${esc(p.title)}${hasVideo(p) ? `<span class="vidtag">▶ VIDÉO</span>` : ""}</span><span class="tg">${esc(p.tagline)}</span></td>
+      <td class="role">${esc(p.role)}</td>
+      <td class="c">${esc(p.channel || p.org || "")}</td>
+      <td class="y">${esc(p.year || "")}</td>
+      <td class="st"><span class="badge${p.status === "en-cours" ? " on" : ""}">${p.status === "en-cours" ? '<span class="dot"></span>' : ""}${esc(STATUS[p.status] || "")}</span></td></tr>`).join("")}
+    </tbody></table>
+  </div></section>
+
+  <section id="parcours"><div class="wrap">
+    <div class="shead"><span class="num mono">02 / Parcours</span><h2>Parcours</h2><span class="aside mono">${isFinite(since) ? "Depuis " + since : ""}</span></div>
+    <div class="cols">
+      <div class="tl"><h3>Expérience</h3>${exp.map(item).join("")}</div>
+      <div class="tl2"><h3>Formation</h3>${edu.map(item).join("")}
+        <h3>Langues</h3><div class="item" style="grid-template-columns:1fr"><div>${esc(s.languages)}</div></div>
+        ${s.interests ? `<h3>Centres d’intérêt</h3><div class="item" style="grid-template-columns:1fr"><div>${esc(s.interests)}</div></div>` : ""}</div>
+    </div>
+  </div></section>
+
+  <section id="competences"><div class="wrap">
+    <div class="shead"><span class="num mono">03 / Compétences</span><h2>Matériel</h2><span class="aside mono">${s.skills.length} domaines</span></div>
+    <div class="skills">${s.skills.map((g) => `<div class="sk"><h3>${esc(g.label)}</h3><ul>${g.items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}</div>
+  </div></section>
+
+  <section id="antennes"><div class="wrap">
+    <div class="shead"><span class="num mono">04 / Diffuseurs</span><h2>Antennes</h2><span class="aside mono">${(P.broadcasters || []).length} chaînes</span></div>
+    <div class="antennas"><ul class="bc">${(P.broadcasters || []).map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
+      ${P.antennaText ? `<p>${esc(P.antennaText)}</p>` : ""}
+      ${(P.partners || []).length ? `<ul class="pt">${P.partners.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>` : ""}</div>
+  </div></section>
+  </main>
+
+  <footer class="contact" id="contact"><div class="wrap">
+    <p class="mono" style="color:var(--tally);margin:0 0 18px">05 / Contact</p>
+    <p class="big"><a href="${contactLink}"${contactLink.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>Tournons<br>ensemble.</a></p>
+    <div class="clist">${contacts.map(([k, v]) => `<div><span class="mono">${k}</span>${v}</div>`).join("")}
+</div>
+    <div class="foot mono"><span>© ${new Date().getFullYear()} ${esc(P.first)} ${esc(P.last)}</span><span>${esc(P.roles)}</span><a href="#admin" style="text-decoration:none;opacity:.6">Admin</a></div>
+  </div></footer>
+
+  <div class="peek" id="peek" aria-hidden="true"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-title"></div>
+  <button class="btn solid admin-fab${caps.canEdit ? " show" : ""}" id="admin-fab" type="button">Admin</button>
+  <aside class="adm" id="adm" aria-label="Administration"></aside>
+  <div class="toast" id="toast" role="status"></div>`;
+  document.title = s.title;
+  bind();
+  route();
+  if (admOpen) renderAdmin();
+}
+
+function fitName() {
+  const h = $(".name"), l1 = $(".name .l1"), l2 = $(".name .l2"); if (!h || !l2) return;
+  l2.style.fontSize = "100px"; l1.style.fontSize = "50px";
+  const w = h.clientWidth, t = l2.offsetWidth; if (!w || !t) return;
+  const size = Math.min(100 * w / t, 420);
+  l2.style.fontSize = size + "px";
+  l1.style.fontSize = Math.min(size * 0.5, 100 * w / (l1.offsetWidth * 2)) + "px";
+}
+addEventListener("resize", () => { clearTimeout(fitName.t); fitName.t = setTimeout(fitName, 80); });
+document.fonts && document.fonts.ready.then(fitName);
+function bind() {
+  fitName();
+  $$(".chip").forEach((b) => b.onclick = () => { filter = b.dataset.f; const y = scrollY; render(); scrollTo(0, y); });
+  $$(".track").forEach((b) => b.onclick = () => { filter = b.dataset.cat; render(); $(".filters").scrollIntoView({ behavior: "smooth", block: "start" }); });
+  const peek = $("#peek");
+  $$(".rundown .row").forEach((r) => {
+    const p = view().projects.find((x) => x.slug === r.dataset.slug);
+    r.onclick = () => openProject(p.slug);
+    r.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openProject(p.slug); } };
+    r.onmouseenter = () => { peek.innerHTML = coverHTML(p, visibleProjects().indexOf(p)); peek.firstElementChild.style.height = "100%"; peek.classList.add("show"); };
+    r.onmouseleave = () => peek.classList.remove("show");
+    r.onmousemove = (e) => { peek.style.left = Math.min(e.clientX + 24, innerWidth - 320) + "px"; peek.style.top = Math.min(e.clientY - 90, innerHeight - 210) + "px"; };
+  });
+  const cv = $("#cvbtn"); if (cv) cv.onclick = downloadCV;
+  $("#admin-fab").onclick = () => openAdmin();
+}
+
+/* Horloge « timecode » à l'heure locale */
+function tick() {
+  const el = $("#tc"); if (!el) return;
+  try {
+    const t = new Intl.DateTimeFormat("fr-FR", { timeZone: view().profile.tz || "Europe/Paris", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }).format(new Date());
+    el.textContent = t + ":" + pad(Math.floor((Date.now() % 1000) / 40));
+  } catch { el.textContent = ""; }
+}
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+setInterval(tick, reduce ? 1000 : 40);
+
+/* ───────────── Fiche projet (#p-slug) ───────────── */
+function openProject(slug) { location.hash = "p-" + slug; }
+function route() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (h === "admin") { if (!admOpen) setTimeout(openAdmin, 0); return; }
+  const sheet = $("#sheet"); if (!sheet) return;
+  if (!h.startsWith("p-")) { if (sheet.classList.contains("open")) { sheet.classList.remove("open"); document.body.style.overflow = ""; } return; }
+  const list = visibleProjects(), i = list.findIndex((p) => p.slug === h.slice(2));
+  if (i < 0) return;
+  const p = list[i], prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
+  const links = (p.links || []).filter((l) => safeUrl(l.url));
+  const paras = String(p.description || "").split(/\n{2,}/).map((t) => `<p>${esc(t).replace(/\n/g, "<br>")}</p>`).join("");
+  sheet.innerHTML = `<div class="sheet-bar"><div class="wrap"><span class="mono" style="color:var(--mute)">N°${pad(i + 1)} / ${pad(list.length)} · ${esc(cat(p.category))}</span>
+    <button class="iconbtn x" type="button" id="sh-close">Fermer ✕</button></div></div>
+    <div class="wrap"><div class="sh-head"><span class="badge${p.status === "en-cours" ? " on" : ""}">${p.status === "en-cours" ? '<span class="dot live"></span>' : ""}${esc(STATUS[p.status] || "")}</span>
+      <h1 id="sh-title">${esc(p.title)}</h1><p>${esc(p.tagline)}</p></div>
+      ${vids(p).length ? `<div class="player">${vids(p).map((v) => playerHTML(v, p)).join("")}</div>` : coverHTML(p, i, { cls: "sh-cover" })}
+      <div class="sh-body"><div class="sh-meta">
+        ${p.role ? `<div><span class="mono">Poste</span>${esc(p.role)}</div>` : ""}
+        ${p.org ? `<div><span class="mono">Production</span>${esc(p.org)}</div>` : ""}
+        ${p.channel ? `<div><span class="mono">Diffuseur</span>${esc(p.channel)}</div>` : ""}
+        ${p.year ? `<div><span class="mono">Date</span>${esc(p.year)}</div>` : ""}
+        ${p.stack.length ? `<div><span class="mono">Matériel</span>${esc(p.stack.join(" · "))}</div>` : ""}
+        ${links.length ? `<div><span class="mono">Liens</span>${links.map((l) => `<a href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener">${esc(l.label || host(safeUrl(l.url)))} ↗</a>`).join("<br>")}</div>` : ""}
+      </div><div class="sh-text">${paras}
+        ${(p.gallery || []).length ? `<div class="gallery">${p.gallery.map((g) => `<img src="${esc(imgSrc(g))}" alt="${esc(p.title)}" loading="lazy">`).join("")}</div>` : ""}
+      </div></div>
+      ${list.length > 1 ? `<div class="sh-nav"><button type="button" data-go="${esc(prev.slug)}"><span class="mono" style="color:var(--mute)">← Précédent</span><strong>${esc(prev.title)}</strong></button>
+        <button type="button" data-go="${esc(next.slug)}"><span class="mono" style="color:var(--mute)">Suivant →</span><strong>${esc(next.title)}</strong></button></div>` : ""}
+    </div>`;
+  if (!sheet.classList.contains("open")) { sheet.classList.add("open"); document.body.style.overflow = "hidden"; }
+  sheet.scrollTop = 0;
+  $("#sh-close").onclick = closeProject;
+  $$("[data-go]", sheet).forEach((b) => b.onclick = () => openProject(b.dataset.go));
+  $("#sh-close").focus({ preventScroll: true });
+}
+function playerHTML(v, p) {
+  const I = v.info, cap = v.title ? `<figcaption>${esc(v.title)}</figcaption>` : "";
+  if (I.embed) return `<figure style="margin:0"><div class="frame"><iframe src="${esc(I.embed)}" title="${esc(v.title || p.title)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>${cap}</figure>`;
+  if (I.kind === "file") return `<figure style="margin:0"><video controls playsinline preload="metadata" src="${esc(I.url)}"${p.cover ? ` poster="${esc(imgSrc(p.cover))}"` : ""}></video>${cap}</figure>`;
+  return `<a class="watch" href="${esc(I.url)}" target="_blank" rel="noopener"><span><span class="mono" style="opacity:.7;display:block;margin-bottom:8px">Regarder sur ${esc(host(I.url))}</span><strong>▶ ${esc(v.title || "Voir la vidéo")}</strong></span><span class="mono">↗</span></a>`;
+}
+function closeProject() { history.replaceState(null, "", location.pathname + location.search + "#projets"); route(); $("#projets")?.scrollIntoView(); }
+addEventListener("hashchange", route);
+addEventListener("keydown", (e) => { if (e.key === "Escape") { if ($("#sheet")?.classList.contains("open")) closeProject(); else if (admOpen) closeAdmin(); } });
+
+/* ───────────── Téléchargement du CV ───────────── */
+function downloadCV() {
+  const P = view().profile; if (!P.cv) return;
+  const a = document.createElement("a"); a.href = imgSrc(P.cv); a.download = `CV_${slugify(P.first + " " + P.last)}.pdf`; a.target = "_blank"; a.rel = "noopener"; document.body.append(a); a.click(); a.remove();
+}
+
+/* ───────────── Administration ───────────── */
+let admOpen = false, admTab = "projets", editing = null;
+const DRAFT_KEY = "bf-site-draft";
+const clone = (o) => JSON.parse(JSON.stringify(o));
+const store = { get() { try { return JSON.parse(localStorage.getItem(DRAFT_KEY)); } catch { return null; } },
+  set(v) { try { localStorage.setItem(DRAFT_KEY, JSON.stringify(v)); } catch {} },
+  clear() { try { localStorage.removeItem(DRAFT_KEY); } catch {} } };
+const isDirty = () => draft && JSON.stringify(draft) !== JSON.stringify(site);
+function touch() { store.set({ at: Date.now(), base: JSON.stringify(site).length, data: draft }); render(); }
+
+function toast(msg, ms = 3200) { const t = $("#toast"); if (!t) return; t.textContent = msg; t.classList.add("show"); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove("show"), ms); }
+
+function openAdmin() { if (!caps.canEdit) { admOpen = true; admTab = "reglages"; render(); return; } if (!draft) { const saved = store.get(); draft = clone(site); admOpen = true; render(); if (saved && saved.data && JSON.stringify(saved.data) !== JSON.stringify(site)) offerRestore(saved); return; } admOpen = true; render(); }
+function closeAdmin() { admOpen = false; editing = null; if (!isDirty()) draft = null; if (location.hash === "#admin") history.replaceState(null, "", location.pathname + location.search); render(); }
+function offerRestore(saved) {
+  const b = $(".adm-b"); if (!b) return;
+  const n = document.createElement("div"); n.className = "note";
+  n.innerHTML = `Des modifications non publiées du ${new Date(saved.at).toLocaleString("fr-FR")} ont été retrouvées. <button class="btn small" type="button" id="rs-y">Les reprendre</button> <button class="btn small" type="button" id="rs-n">Les ignorer</button>`;
+  b.prepend(n);
+  $("#rs-y").onclick = () => { draft = saved.data; touch(); };
+  $("#rs-n").onclick = () => { store.clear(); n.remove(); };
+}
+
+function renderAdmin() {
+  const a = $("#adm"); if (!a) return;
+  a.classList.add("open");
+  const tabs = caps.canEdit ? [["projets", "Productions"], ["profil", "Profil"], ["parcours", "Parcours"], ["competences", "Matériel"], ["reglages", "Connexion"]] : [["reglages", "Connexion"]];
+  a.innerHTML = `<div class="adm-h"><strong>Admin</strong><span class="mono" style="color:var(--mute)">${caps.canEdit ? "Connecté · " + esc((gh.cfg() || {}).repo || "") : "Non connecté"}</span><button class="iconbtn x" type="button" id="adm-x">Fermer ✕</button></div>
+    <div class="adm-tabs" role="tablist">${tabs.map(([k, l]) => `<button role="tab" type="button" data-t="${k}" aria-selected="${admTab === k}">${l}</button>`).join("")}</div>
+    <div class="adm-b" id="adm-b"></div>
+    <div class="adm-f"><span class="pending${isDirty() ? " dirty" : ""}">${isDirty() ? "Modifications non publiées" : "Le site est à jour"}</span>
+      <button class="btn small" type="button" id="adm-reset" ${isDirty() ? "" : "disabled"}>Annuler</button>
+      <button class="btn solid small" type="button" id="adm-pub" ${isDirty() ? "" : "disabled"}>Publier sur le site</button></div>`;
+  $("#adm-x").onclick = closeAdmin;
+  $$(".adm-tabs button").forEach((b) => b.onclick = () => { admTab = b.dataset.t; editing = null; renderAdmin(); });
+  $("#adm-reset").onclick = () => { draft = clone(site); store.clear(); editing = null; render(); };
+  if (!draft) draft = clone(site);
+  $("#adm-pub").onclick = publish;
+  const body = $("#adm-b");
+  if (admTab === "reglages" || !caps.canEdit) return loginForm(body);
+  if (admTab === "projets") editing ? projectForm(body) : projectList(body);
+  if (admTab === "profil") profileForm(body);
+  if (admTab === "parcours") editing ? expForm(body) : expList(body);
+  if (admTab === "competences") skillsForm(body);
+}
+
+function move(arr, i, d) { const j = i + d; if (j < 0 || j >= arr.length) return; [arr[i], arr[j]] = [arr[j], arr[i]]; }
+
+function projectList(body) {
+  body.innerHTML = `<p class="note">L’ordre de cette liste est celui du site. ★ met une production à la une, l’œil le masque sans le supprimer.</p>
+    <button class="btn solid small" type="button" id="p-add" style="margin-bottom:14px">+ Ajouter une production</button>
+    <div class="alist">${draft.projects.map((p, i) => `<div class="arow${p.hidden ? " hidden" : ""}"><div><strong>${esc(p.title)}</strong>
+      <small>${esc(p.role || cat(p.category))}${p.year ? " · " + esc(p.year) : ""} · ${esc(STATUS[p.status] || "")}${hasVideo(p) ? " · ▶ vidéo" : ""}${p.featured ? " · à la une" : ""}${p.hidden ? " · masqué" : ""}</small></div>
+      <div class="acts"><button type="button" data-a="up" data-i="${i}" title="Monter" aria-label="Monter ${esc(p.title)}">↑</button><button type="button" data-a="down" data-i="${i}" title="Descendre" aria-label="Descendre ${esc(p.title)}">↓</button>
+      <button type="button" data-a="feat" data-i="${i}" title="À la une" aria-label="À la une" aria-pressed="${!!p.featured}">${p.featured ? "★" : "☆"}</button>
+      <button type="button" data-a="hide" data-i="${i}" title="Masquer / afficher" aria-label="Masquer ou afficher">${p.hidden ? "◌" : "◉"}</button>
+      <button type="button" data-a="edit" data-i="${i}" title="Modifier" aria-label="Modifier ${esc(p.title)}">✎</button></div></div>`).join("")}</div>`;
+  $("#p-add").onclick = () => { const p = { id: uid(), slug: "", title: "Nouvelle production", tagline: "", category: view().tracks[0].k, role: "Cadreur", org: "", channel: "", stack: [], year: "", status: "en-cours", featured: false, hidden: true, description: "", links: [], cover: null, gallery: [] }; draft.projects.unshift(p); editing = p.id; touch(); };
+  $$("[data-a]", body).forEach((b) => b.onclick = () => {
+    const i = +b.dataset.i, p = draft.projects[i];
+    ({ up: () => move(draft.projects, i, -1), down: () => move(draft.projects, i, 1), feat: () => p.featured = !p.featured, hide: () => p.hidden = !p.hidden, edit: () => editing = p.id })[b.dataset.a]();
+    touch();
+  });
+}
+
+function field(id, label, value, o = {}) {
+  const v = esc(value ?? "");
+  const input = o.type === "textarea" ? `<textarea id="${id}" ${o.rows ? `rows="${o.rows}"` : ""}>${v}</textarea>`
+    : o.type === "select" ? `<select id="${id}">${o.options.map(([k, l]) => `<option value="${esc(k)}"${k === value ? " selected" : ""}>${esc(l)}</option>`).join("")}</select>`
+    : `<input type="${o.type || "text"}" id="${id}" value="${v}" ${o.ph ? `placeholder="${esc(o.ph)}"` : ""}>`;
+  return `<div class="field"><label for="${id}">${esc(label)}</label>${input}${o.hint ? `<span class="hint">${esc(o.hint)}</span>` : ""}</div>`;
+}
+const val = (id) => $("#" + id)?.value ?? "";
+
+async function pickImage(maxW = 1800) {
+  const f = await new Promise((res) => { const i = document.createElement("input"); i.type = "file"; i.accept = "image/*"; i.onchange = () => res(i.files[0]); i.click(); });
+  if (!f) return null;
+  return await imageToRef(f, maxW);
+}
+async function imageToRef(file, maxW) {
+  const bmp = await createImageBitmap(file);
+  const s = Math.min(1, maxW / bmp.width), c = document.createElement("canvas");
+  c.width = Math.round(bmp.width * s); c.height = Math.round(bmp.height * s);
+  c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+  const blob = await new Promise((r) => c.toBlob(r, "image/jpeg", 0.84));
+  toast("Envoi de l’image…", 20000);
+  try { const ref = await gh.upload(`media/${Date.now().toString(36)}-${uid()}.jpg`, blob); toast("Image envoyée."); return ref; }
+  catch (e) { toast("Envoi de l’image impossible : " + e.message, 7000); return null; }
+}
+
+function projectForm(body) {
+  const p = draft.projects.find((x) => x.id === editing); if (!p) { editing = null; return projectList(body); }
+  body.innerHTML = `<button class="iconbtn" type="button" id="pf-back" style="margin-bottom:14px">← Toutes les productions</button>
+  <form class="form" id="pf">
+    ${field("pf-title", "Titre", p.title)}
+    ${field("pf-tag", "Accroche (une ligne)", p.tagline)}
+    <div class="row2">${field("pf-cat", "Piste", p.category, { type: "select", options: view().tracks.map((t) => [t.k, t.label]) })}
+      ${field("pf-st", "Statut", p.status, { type: "select", options: Object.entries(STATUS) })}</div>
+    <div class="row2">${field("pf-role", "Poste", p.role)}${field("pf-year", "Date", p.year, { ph: "MM/AAAA" })}</div>
+    <div class="row2">${field("pf-org", "Production", p.org)}${field("pf-chan", "Diffuseur", p.channel, { ph: "SRTB, A+ Bénin…" })}</div>
+    ${field("pf-stack", "Matériel", p.stack.join(", "), { hint: "Facultatif, séparé par des virgules" })}
+    ${field("pf-desc", "Description", p.description, { type: "textarea", rows: 8, hint: "Une ligne vide sépare deux paragraphes" })}
+    <div class="field"><label>Liens</label><div id="pf-links" style="display:flex;flex-direction:column;gap:6px">
+      ${(p.links.length ? p.links : [{ label: "", url: "" }]).map((l, i) => `<div class="linkrow"><input type="text" aria-label="Libellé du lien ${i + 1}" data-l="label" value="${esc(l.label)}" placeholder="Libellé"><input type="url" aria-label="Adresse du lien ${i + 1}" data-l="url" value="${esc(l.url)}" placeholder="https://"><button type="button" data-rm="${i}" aria-label="Retirer le lien">✕</button></div>`).join("")}
+    </div><button class="btn small" type="button" id="pf-addlink" style="align-self:flex-start">+ Lien</button></div>
+    <div class="field"><label>Vidéos (YouTube, Vimeo, Google Drive)</label>
+      <div id="pf-vids" style="display:flex;flex-direction:column;gap:6px">
+      ${((p.videos || []).length ? p.videos : [{ title: "", url: "" }]).map((v, k) => `<div class="linkrow"><input type="text" aria-label="Titre de la vidéo ${k + 1}" data-v="title" value="${esc(v.title || "")}" placeholder="Titre (facultatif)"><input type="url" aria-label="Lien de la vidéo ${k + 1}" data-v="url" value="${esc(v.url || "")}" placeholder="https://youtu.be/…"><button type="button" data-rmv="${k}" aria-label="Retirer la vidéo ${k + 1}">✕</button></div>`).join("")}
+      </div><button class="btn small" type="button" id="pf-addvid" style="align-self:flex-start">+ Vidéo</button>
+      <span class="hint">Mettez la vidéo sur YouTube (« Non répertoriée » si vous préférez), puis collez son lien. Elle se lit sur la fiche, avec le choix de qualité jusqu’à la 4K. Sans image de couverture, la miniature YouTube est utilisée.</span></div>
+    <div class="field"><label>Image de couverture</label>
+      <div class="thumbs">${p.cover ? `<figure><img src="${esc(imgSrc(p.cover))}" alt=""><button type="button" id="pf-rmcover" aria-label="Retirer la couverture">✕</button></figure>` : ""}</div>
+      <button class="btn small" type="button" id="pf-cover" style="align-self:flex-start">${p.cover ? "Remplacer" : "Choisir une image"}</button>
+      <span class="hint">Sans image : miniature YouTube, sinon couverture typographique générée.</span></div>
+    <div class="field"><label>Galerie</label>
+      <div class="thumbs">${p.gallery.map((g, i) => `<figure><img src="${esc(imgSrc(g))}" alt=""><button type="button" data-rmg="${i}" aria-label="Retirer l’image ${i + 1}">✕</button></figure>`).join("")}</div>
+      <button class="btn small" type="button" id="pf-gal" style="align-self:flex-start">+ Ajouter une image</button></div>
+    <label class="check"><input type="checkbox" id="pf-feat" ${p.featured ? "checked" : ""}> Mettre à la une</label>
+    <label class="check"><input type="checkbox" id="pf-hid" ${p.hidden ? "checked" : ""}> Masquer du site (brouillon)</label>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px"><button class="btn solid small" type="submit">Enregistrer le projet</button>
+      <button class="btn small" type="button" id="pf-del" style="margin-left:auto;border-color:var(--tally);color:var(--tally)">Supprimer</button></div>
+  </form>`;
+  const collect = () => {
+    p.title = val("pf-title").trim() || "Sans titre"; p.tagline = val("pf-tag").trim(); p.category = val("pf-cat"); p.status = val("pf-st");
+    p.role = val("pf-role").trim(); p.year = val("pf-year").trim(); p.org = val("pf-org").trim(); p.channel = val("pf-chan").trim(); p.stack = val("pf-stack").split(",").map((s) => s.trim()).filter(Boolean);
+    p.description = val("pf-desc").trim(); p.videos = $$("#pf-vids .linkrow").map((r) => ({ title: $("[data-v=title]", r).value.trim(), url: $("[data-v=url]", r).value.trim() })).filter((v) => v.url); p.featured = $("#pf-feat").checked; p.hidden = $("#pf-hid").checked;
+    p.links = $$("#pf-links .linkrow").map((r) => ({ label: $("[data-l=label]", r).value.trim(), url: $("[data-l=url]", r).value.trim() })).filter((l) => l.url);
+    if (!p.slug) { let base = slugify(p.title), s = base, n = 2; while (draft.projects.some((x) => x !== p && x.slug === s)) s = base + "-" + n++; p.slug = s; }
+  };
+  $("#pf-back").onclick = () => { collect(); editing = null; touch(); };
+  $("#pf").onsubmit = (e) => { e.preventDefault(); collect(); editing = null; touch(); toast("Production enregistrée. Pensez à publier."); };
+  $("#pf-addlink").onclick = () => { collect(); p.links.push({ label: "", url: "" }); touch(); };
+  $$("[data-rm]", body).forEach((b) => b.onclick = () => { collect(); p.links.splice(+b.dataset.rm, 1); touch(); });
+  $("#pf-cover").onclick = async () => { collect(); const r = await pickImage(); if (r) { p.cover = r; touch(); } };
+  const rc = $("#pf-rmcover"); if (rc) rc.onclick = () => { collect(); p.cover = null; touch(); };
+  $$("[data-rmv]", body).forEach((b) => b.onclick = () => { collect(); p.videos.splice(+b.dataset.rmv, 1); touch(); });
+  $("#pf-addvid").onclick = () => { collect(); p.videos.push({ title: "", url: "" }); touch(); };
+  $("#pf-gal").onclick = async () => { collect(); const r = await pickImage(1600); if (r) { p.gallery.push(r); touch(); } };
+  $$("[data-rmg]", body).forEach((b) => b.onclick = () => { collect(); p.gallery.splice(+b.dataset.rmg, 1); touch(); });
+  $("#pf-del").onclick = () => {
+    const btn = $("#pf-del");
+    if (btn.dataset.sure) { draft.projects = draft.projects.filter((x) => x !== p); editing = null; touch(); toast("Production supprimée."); }
+    else { btn.dataset.sure = "1"; btn.textContent = "Confirmer la suppression"; }
+  };
+}
+
+function profileForm(body) {
+  const P = draft.profile, C = P.contact;
+  body.innerHTML = `<form class="form" id="prf">
+    ${field("pr-prefix", "Prénoms (au-dessus du nom)", P.prefix)}
+    <div class="row2">${field("pr-first", "Prénom d’usage", P.first)}${field("pr-last", "Nom", P.last)}</div>
+    ${field("pr-roles", "Rôles (ligne rouge sous le nom)", P.roles)}
+    ${field("pr-lede", "Présentation", P.lede, { type: "textarea", rows: 4 })}
+    <div class="row2">${field("pr-stl", "Étiquette du statut", P.statusLabel)}${field("pr-city", "Ville de l’horloge", P.city)}</div>
+    ${field("pr-status", "Statut actuel", P.status)}
+    <div class="row2">${field("pr-loc", "Localisation", P.location)}${field("pr-origin", "Origine", P.origin)}</div>
+    ${field("pr-bc", "Chaînes (section Antennes)", (P.broadcasters || []).join(", "), { hint: "Séparées par des virgules" })}
+    ${field("pr-pt", "Partenaires", (P.partners || []).join(", "), { hint: "Séparés par des virgules" })}
+    ${field("pr-atext", "Texte sous les chaînes", P.antennaText, { type: "textarea", rows: 3 })}
+    <h3 class="mono" style="margin:10px 0 0;color:var(--mute)">Contact</h3>
+    <div class="row2">${field("pr-email", "E-mail", C.email, { type: "email" })}${field("pr-phone", "Téléphone", C.phone)}</div>
+    <div class="row2">${field("pr-ig", "Instagram", C.instagram, { type: "url" })}${field("pr-fb", "Facebook", C.facebook)}</div>
+    <div class="row2">${field("pr-li", "LinkedIn", C.linkedin, { type: "url", ph: "https://linkedin.com/in/…" })}${field("pr-web", "Site / bande démo", C.website, { type: "url" })}</div>
+    ${field("pr-addr", "Adresse", C.address)}
+    ${field("pr-langs", "Langues", draft.languages)}
+    ${field("pr-int", "Centres d’intérêt", draft.interests)}
+    <div class="field"><label>Portrait</label><div class="thumbs">${P.portrait ? `<figure><img src="${esc(imgSrc(P.portrait))}" alt=""><button type="button" id="pr-rmp" aria-label="Retirer le portrait">✕</button></figure>` : ""}</div>
+      <button class="btn small" type="button" id="pr-portrait" style="align-self:flex-start">${P.portrait ? "Remplacer" : "Ajouter un portrait"}</button></div>
+    <div class="field"><label>CV en PDF</label><span class="hint">${P.cv ? "Un CV est en ligne." : "Aucun CV pour l’instant."}</span>
+      <div style="display:flex;gap:8px"><button class="btn small" type="button" id="pr-cv">${P.cv ? "Remplacer le PDF" : "Ajouter un PDF"}</button>${P.cv ? `<button class="btn small" type="button" id="pr-rmcv">Retirer</button>` : ""}</div></div>
+    <button class="btn solid small" type="submit" style="align-self:flex-start">Enregistrer le profil</button>
+  </form>`;
+  const collect = () => {
+    Object.assign(P, { first: val("pr-first").trim(), last: val("pr-last").trim(), roles: val("pr-roles").trim(), lede: val("pr-lede").trim(), statusLabel: val("pr-stl").trim(), city: val("pr-city").trim(), status: val("pr-status").trim(), location: val("pr-loc").trim(), origin: val("pr-origin").trim(), prefix: val("pr-prefix").trim(), broadcasters: val("pr-bc").split(",").map((x) => x.trim()).filter(Boolean), partners: val("pr-pt").split(",").map((x) => x.trim()).filter(Boolean), antennaText: val("pr-atext").trim() });
+    Object.assign(C, { email: val("pr-email").trim(), phone: val("pr-phone").trim(), linkedin: val("pr-li").trim(), website: val("pr-web").trim(), instagram: val("pr-ig").trim(), facebook: val("pr-fb").trim(), address: val("pr-addr").trim() });
+    draft.languages = val("pr-langs").trim(); draft.interests = val("pr-int").trim(); draft.title = `${P.first} ${P.last}`;
+  };
+  $("#prf").onsubmit = (e) => { e.preventDefault(); collect(); touch(); toast("Profil enregistré. Pensez à publier."); };
+  $("#pr-portrait").onclick = async () => { collect(); const r = await pickImage(1000); if (r) { P.portrait = r; touch(); } };
+  const rp = $("#pr-rmp"); if (rp) rp.onclick = () => { collect(); P.portrait = null; touch(); };
+  $("#pr-cv").onclick = async () => {
+    collect();
+    const f = await new Promise((res) => { const i = document.createElement("input"); i.type = "file"; i.accept = "application/pdf"; i.onchange = () => res(i.files[0]); i.click(); });
+    if (!f) return;
+    toast("Envoi du CV…", 20000);
+    try { P.cv = await gh.upload(`media/cv-${Date.now().toString(36)}.pdf`, f); touch(); toast("CV envoyé. Pensez à publier."); }
+    catch (e) { toast("Envoi du PDF impossible : " + e.message, 7000); }
+  };
+  const rcv = $("#pr-rmcv"); if (rcv) rcv.onclick = () => { collect(); P.cv = null; touch(); };
+}
+
+function expList(body) {
+  const grp = (kind, label) => `<h3 class="mono" style="margin:18px 0 8px;color:var(--mute)">${label}</h3>
+    <div class="alist">${draft.experience.map((e, i) => e.kind !== kind ? "" : `<div class="arow"><div><strong>${esc(e.title)}</strong><small>${esc(e.org)}${e.start ? " · " + esc(e.start) : ""}${e.current ? " – aujourd’hui" : e.end ? " – " + esc(e.end) : ""}</small></div>
+      <div class="acts"><button type="button" data-a="up" data-i="${i}" aria-label="Monter">↑</button><button type="button" data-a="down" data-i="${i}" aria-label="Descendre">↓</button><button type="button" data-a="edit" data-i="${i}" aria-label="Modifier ${esc(e.title)}">✎</button></div></div>`).join("")}</div>
+    <button class="btn small" type="button" data-new="${kind}" style="margin-top:10px">+ Ajouter</button>`;
+  body.innerHTML = `<p class="note">Classez les entrées de la plus récente à la plus ancienne. Dates au format MM/AAAA.</p>${grp("exp", "Expérience")}${grp("edu", "Formation")}`;
+  $$("[data-a]", body).forEach((b) => b.onclick = () => { const i = +b.dataset.i; if (b.dataset.a === "edit") editing = draft.experience[i].id; else move(draft.experience, i, b.dataset.a === "up" ? -1 : 1); touch(); });
+  $$("[data-new]", body).forEach((b) => b.onclick = () => { const e = { id: uid(), kind: b.dataset.new, title: "", org: "", place: "", start: "", end: "", current: false, text: "" }; const at = draft.experience.findIndex((x) => x.kind === e.kind); draft.experience.splice(at < 0 ? draft.experience.length : at, 0, e); editing = e.id; touch(); });
+}
+function expForm(body) {
+  const e = draft.experience.find((x) => x.id === editing); if (!e) { editing = null; return expList(body); }
+  body.innerHTML = `<button class="iconbtn" type="button" id="ef-back" style="margin-bottom:14px">← Parcours</button><form class="form" id="ef">
+    ${field("ef-title", e.kind === "edu" ? "Diplôme" : "Poste", e.title)}${field("ef-org", e.kind === "edu" ? "Établissement" : "Entreprise", e.org)}${field("ef-place", "Lieu", e.place)}
+    <div class="row2">${field("ef-start", "Début", e.start, { ph: "MM/AAAA" })}${field("ef-end", "Fin", e.end, { ph: "MM/AAAA" })}</div>
+    <label class="check"><input type="checkbox" id="ef-cur" ${e.current ? "checked" : ""}> En cours</label>
+    ${field("ef-text", "Description", e.text, { type: "textarea", rows: 4 })}
+    <div style="display:flex;gap:8px"><button class="btn solid small" type="submit">Enregistrer</button><button class="btn small" type="button" id="ef-del" style="margin-left:auto;border-color:var(--tally);color:var(--tally)">Supprimer</button></div></form>`;
+  const collect = () => Object.assign(e, { title: val("ef-title").trim(), org: val("ef-org").trim(), place: val("ef-place").trim(), start: val("ef-start").trim(), end: val("ef-end").trim(), current: $("#ef-cur").checked, text: val("ef-text").trim() });
+  $("#ef-back").onclick = () => { collect(); editing = null; touch(); };
+  $("#ef").onsubmit = (ev) => { ev.preventDefault(); collect(); editing = null; touch(); };
+  $("#ef-del").onclick = () => { const b = $("#ef-del"); if (b.dataset.sure) { draft.experience = draft.experience.filter((x) => x !== e); editing = null; touch(); } else { b.dataset.sure = 1; b.textContent = "Confirmer"; } };
+}
+
+function skillsForm(body) {
+  body.innerHTML = `<p class="note">Un domaine par bloc ; outils séparés par des virgules.</p><form class="form" id="skf">
+    ${draft.skills.map((g, i) => `<div style="border-top:1px solid var(--line);padding-top:12px" class="form">${field("sk-l" + i, "Domaine", g.label)}${field("sk-i" + i, "Outils", g.items.join(", "))}<button class="btn small" type="button" data-rmsk="${i}" style="align-self:flex-start">Retirer ce domaine</button></div>`).join("")}
+    <div style="display:flex;gap:8px"><button class="btn small" type="button" id="sk-add">+ Domaine</button><button class="btn solid small" type="submit">Enregistrer</button></div></form>`;
+  const collect = () => draft.skills.forEach((g, i) => { g.label = val("sk-l" + i).trim(); g.items = val("sk-i" + i).split(",").map((s) => s.trim()).filter(Boolean); });
+  $("#skf").onsubmit = (e) => { e.preventDefault(); collect(); draft.skills = draft.skills.filter((g) => g.label); touch(); };
+  $("#sk-add").onclick = () => { collect(); draft.skills.push({ label: "Nouveau domaine", items: [] }); touch(); };
+  $$("[data-rmsk]", body).forEach((b) => b.onclick = () => { collect(); draft.skills.splice(+b.dataset.rmsk, 1); touch(); });
+}
+
+/* ───────────── GitHub : enregistrement du contenu ───────────── */
+const GH_KEY = "bg-site-github";
+const gh = {
+  cfg() { try { return JSON.parse(localStorage.getItem(GH_KEY)) || null; } catch { return null; } },
+  save(c) { try { localStorage.setItem(GH_KEY, JSON.stringify(c)); } catch {} },
+  forget() { try { localStorage.removeItem(GH_KEY); } catch {} },
+  async api(path, opts = {}) {
+    const c = gh.cfg(); if (!c) throw new Error("connexion GitHub non configurée");
+    const r = await fetch(`https://api.github.com/repos/${c.owner}/${c.repo}${path}`, { ...opts, headers: { Accept: "application/vnd.github+json", Authorization: `Bearer ${c.token}`, "X-GitHub-Api-Version": "2022-11-28", ...(opts.headers || {}) } });
+    if (!r.ok) {
+      let m = ""; try { m = (await r.json()).message || ""; } catch {}
+      const why = { 401: "jeton invalide ou expiré", 403: "le jeton n’a pas le droit d’écrire dans ce dépôt", 404: "dépôt ou fichier introuvable (vérifiez le nom et les droits du jeton)", 409: "conflit : le fichier a changé entre-temps", 422: "requête refusée par GitHub" }[r.status];
+      const e = new Error(why ? `${why}${m ? " (" + m + ")" : ""}` : `erreur GitHub ${r.status} ${m}`); e.status = r.status; throw e;
+    }
+    return r.status === 204 ? null : r.json();
+  },
+  async check(c) {
+    gh.save(c);
+    const repo = await gh.api("");
+    if (repo.permissions && repo.permissions.push === false) throw new Error("ce jeton ne peut pas écrire dans le dépôt");
+    return repo;
+  },
+  async sha(path) {
+    const c = gh.cfg();
+    try { return (await gh.api(`/contents/${path}?ref=${encodeURIComponent(c.branch || "main")}`)).sha; } catch (e) { if (e.status === 404) return null; throw e; }
+  },
+  async put(path, base64, message) {
+    const c = gh.cfg(), sha = await gh.sha(path);
+    return gh.api(`/contents/${path}`, { method: "PUT", body: JSON.stringify({ message, content: base64, branch: c.branch || "main", ...(sha ? { sha } : {}) }) });
+  },
+  async upload(path, blob) {
+    const b64 = await blobToBase64(blob);
+    await gh.put(path, b64, `Ajout de ${path.split("/").pop()}`);
+    PREVIEW[path] = URL.createObjectURL(blob);
+    return { src: path };
+  },
+};
+function blobToBase64(blob) {
+  return new Promise((ok, ko) => { const r = new FileReader(); r.onload = () => ok(String(r.result).split(",")[1]); r.onerror = ko; r.readAsDataURL(blob); });
+}
+function textToBase64(s) {
+  const bytes = new TextEncoder().encode(s); let bin = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+
+async function publish() {
+  if (!draft || !caps.canEdit) return;
+  const btn = $("#adm-pub"); btn.disabled = true; btn.textContent = "Publication…";
+  try {
+    store.set({ at: Date.now(), data: draft });
+    await gh.put("content.json", textToBase64(JSON.stringify(draft, null, 1)), "Mise à jour du contenu du site");
+    store.clear();
+    site = draft; draft = null; render();
+    toast("Publié. Le site en ligne se met à jour d’ici une à deux minutes.", 6000);
+  } catch (e) {
+    toast("La publication a échoué : " + e.message + ". Vos modifications sont gardées en brouillon.", 8000);
+    btn.disabled = false; btn.textContent = "Publier sur le site";
+  }
+}
+
+/* Connexion de l'admin (jeton GitHub enregistré dans ce navigateur seulement) */
+function loginForm(body, err = "", prefill = null) {
+  const c = prefill || gh.cfg() || {};
+  body.innerHTML = `<p class="note">L’admin enregistre vos modifications dans votre dépôt GitHub, puis Cloudflare met le site à jour. Ces réglages restent dans ce navigateur uniquement.</p>
+  ${err ? `<p class="note" style="color:var(--tally)">${esc(err)}</p>` : ""}
+  <form class="form" id="lg">
+    <div class="row2">${field("lg-owner", "Compte GitHub", c.owner || "", { ph: "brunelguendehou" })}${field("lg-repo", "Dépôt", c.repo || "", { ph: "site-brunel" })}</div>
+    ${field("lg-branch", "Branche", c.branch || "main")}
+    <div class="field"><label for="lg-token">Jeton d’accès GitHub</label><input type="password" id="lg-token" value="${esc(c.token || "")}" autocomplete="off" placeholder="github_pat_…" style="font:400 15.5px/1.4 var(--body);border:1px solid var(--line);padding:10px 11px;background:var(--paper);color:var(--ink)"><span class="hint">Jeton « fine-grained » limité à ce dépôt, droit « Contents : Read and write ».</span></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn solid small" type="submit">Se connecter</button>${c.token ? `<button class="btn small" type="button" id="lg-out">Se déconnecter de ce navigateur</button>` : ""}</div>
+  </form>`;
+  $("#lg").onsubmit = async (e) => {
+    e.preventDefault();
+    const cfg = { owner: val("lg-owner").trim(), repo: val("lg-repo").trim(), branch: val("lg-branch").trim() || "main", token: val("lg-token").trim() };
+    if (!cfg.owner || !cfg.repo || !cfg.token) return loginForm(body, "Remplissez le compte, le dépôt et le jeton.", cfg);
+    try { await gh.check(cfg); caps.canEdit = true; admTab = "projets"; toast("Connecté à GitHub."); render(); }
+    catch (err) { gh.forget(); caps.canEdit = false; loginForm(body, "Connexion impossible : " + err.message, cfg); }
+  };
+  const out = $("#lg-out"); if (out) out.onclick = () => { gh.forget(); caps.canEdit = false; draft = null; store.clear(); loginForm(body); render(); };
+}
+
+/* ───────────── Démarrage ───────────── */
+(async () => {
+  try {
+    const r = await fetch("content.json?v=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
+    site = await r.json();
+  } catch (e) {
+    $("#app").innerHTML = `<div class="wrap" style="padding:80px 0"><p class="mono" style="color:var(--tally)">Erreur de chargement</p><p>Le fichier content.json est introuvable. Vérifiez qu’il est bien à la racine du dépôt, à côté de index.html.</p></div>`;
+    return;
+  }
+  caps.canEdit = !!(gh.cfg() && gh.cfg().token);
+  document.body.classList.add("intro");
+  render();
+  setTimeout(() => document.body.classList.remove("intro"), 1600);
+  tick();
+})();
+})();
+</script>
+</body>
+</html>
